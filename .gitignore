@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv*/
+
+# IDE / Editor
+.DS_Store
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Runtime output: downloaded recordings, decrypted audio, session keys.
+# Everything under downloads/ is generated and may contain private audio and
+# secret key material — never commit it (README + .gitkeep excepted).
+downloads/*
+!downloads/README.md
+!downloads/.gitkeep

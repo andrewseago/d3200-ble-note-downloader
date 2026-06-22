@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "d3200-ble-note-downloader"
+version = "0.1.0"
+description = "Download and decrypt Anker Soundcore D3200 voice recordings over BLE — no cloud required"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "GPL-3.0-or-later" }
+keywords = ["soundcore", "d3200", "ble", "reverse-engineering", "opus", "voice-recorder"]
+dependencies = [
+    "bleak>=0.22",
+    "cryptography>=42.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+d3200-download = "soundcore_d3200_downloader:main"
+
+[tool.setuptools]
+py-modules = ["soundcore_d3200_downloader"]
+packages = ["tools"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
